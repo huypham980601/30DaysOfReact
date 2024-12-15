@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Exercise</title>
+</head>
+<body>
+<h1>React Exercise: Level 1</h1>
+<script>
+    // Exercise: Level 1
+
+    // 1.Declare an empty array
+    const emptyArray = [];
+    console.log("Empty array : " + emptyArray)
+
+    // 2.Declare an array with more than 5 number of elements
+    const numbers = [1, 2, 3, 4, 5, 6];
+    console
+
+    // 3.Find the length of your array
+    console.log("Length : " + numbers.length);
+
+    // 4.Get the first item, the middle item and the last item of the array
+    console.log("First Item : " + numbers[0]);
+    console.log("Middle Item : " + numbers[Math.floor(numbers.length/2)]);
+    console.log("Last Item : " + numbers[numbers.length - 1]);
+
+    // 5.Find the length of your array
+    const mixedDataTypes = [1, 'Huy', true, null, { key: 'value' }, [1, 2, 3]];
+    console.log("Mix Data Types : " + mixedDataTypes);
+    console.log("Length Mix : " + mixedDataTypes);
+
+    // 6.Declare an array variable called itCompanies
+    const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
+
+    // 7.Print the array using console.log()
+    console.log("IT Companies array : ", itCompanies);
+
+    // 8.Print the number of companies in the array
+    console.log("The number of companies in the array : " + itCompanies.length);
+
+    // 9.Print the first company, middle and last company
+    console.log("First company : " + numbers[0]);
+    console.log("Middle company : " + numbers[Math.floor(numbers.length/2)]);
+    console.log("Last company : " + numbers[numbers.length - 1]);
+
+    // 10.Print out each company
+    itCompanies.forEach(company => console.log("Each Company : ", company))
+
+    // 11.Change each company name to uppercase one by one and print them out
+    const upperCaseCompanies = itCompanies.map(company => company.toUpperCase())
+    console.log("Uppercase companies : ", upperCaseCompanies)
+
+    // 12.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies
+    console.log(`${itCompanies.join(', ')} are big IT companies.`)
+
+    // 13.Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
+    const companyToCheck = 'Apple';
+    console.log(itCompanies.includes(companyToCheck) ? `${companyToCheck} is exists.` : `${companyToCheck} is not found`);
+
+    // 14.Filter out companies which have more than one 'o' without the filter method
+    const companiesWithMoreThanOneO = [];
+    for (let company of itCompanies){
+        const count = company.toLowerCase().split('o').length - 1;
+        if (count > 1){
+            companiesWithMoreThanOneO.push(company);
+        }
+    }
+    console.log("Companies with more than one 'o' : ", companiesWithMoreThanOneO);
+
+    // 15.Sort the array using sort() method
+    console.log("Sorted companies : ", [...itCompanies].sort());
+
+    // 16.Reverse the array using reverse() method
+    console.log("Reversed companies : ", [...itCompanies].reverse());
+
+    // 17.Slice out the first 3 companies from the array
+    console.log("First 3 companies : ", itCompanies.slice(0, 3));
+
+    // 18.Slice out the last 3 companies from the array
+    console.log("Last 3 companies : " + itCompanies.slice(itCompanies.length-3))
+
+    // 19.Slice out the middle IT company or companies from the array
+    if (itCompanies.length % 2 === 0) {
+        const middleCompanies = itCompanies.slice(
+            Math.floor(itCompanies.length / 2) - 1,
+            Math.ceil(itCompanies.length / 2) + 1
+        );
+        console.log("Middle companies (even length):", middleCompanies);
+    } else {
+        // Trường hợp số phần tử lẻ: Lấy 1 phần tử ở giữa
+        const middleCompany = itCompanies.slice(
+            Math.floor(itCompanies.length / 2),     // Phần tử ở giữa
+            Math.ceil(itCompanies.length / 2)      // Vẫn chỉ lấy 1 phần tử
+        );
+        console.log("Middle company (odd length):", middleCompany);
+    }
+
+    // 20.Remove the first IT company from the array
+    const removeFirst = [...itCompanies];
+    removeFirst.shift();
+    console.log("After removing the first company:", removeFirst);
+
+    // 21.Remove the middle IT company or companies from the array
+    const removeMiddle = [...itCompanies];
+    const middleIndex = Math.floor(removeMiddle.length/2);
+    const middleRemoved = removeMiddle.splice(middleIndex,1);
+    console.log("After removing the middle company:", middleRemoved);
+
+    // 22.Remove the last IT company from the array
+    const removeLast = [...itCompanies];
+    removeLast.pop()
+    console.log("After removing the last company:", removeLast);
+
+    // 23.Remove all IT companies
+    const allRemoved = [...itCompanies];
+    allRemoved.length = 0;
+    console.log("After removing all companies:", allRemoved);
+
+</script>
+</body>
+</html>
